@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Dugaire by bjjb</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Dugaire</h1>
+        <h2>A Docker CLI/library for Ruby</h2>
+        <a href="https://github.com/bjjb/dugaire" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="dugaire" class="anchor" href="#dugaire" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dugaire</h1>
+
+<p>A little <a href="https://www.docker.com">Docker</a> library in Ruby.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">gem</span> <span class="pl-s"><span class="pl-pds">'</span>dugaire<span class="pl-pds">'</span></span></pre></div>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install dugaire
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Here are some examples:</p>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">'</span>dugaire<span class="pl-pds">'</span></span>
+<span class="pl-k">include</span> <span class="pl-c1">Dugaire</span>
+
+docker <span class="pl-k">=</span> <span class="pl-c1">Docker</span>::<span class="pl-c1">Client</span>.<span class="pl-k">new</span> <span class="pl-c"># by default, will use unix:///var/run/docker.sock</span>
+containers <span class="pl-k">=</span> docker.containers <span class="pl-c">#=&gt; returns a list of all known Containers</span>
+myapp <span class="pl-k">=</span> containers.find { |<span class="pl-smi">c</span>| c.name <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">'</span>myapp<span class="pl-pds">'</span></span> }
+myapp.status <span class="pl-c">#=&gt; 'running'</span>
+myapp.inspect <span class="pl-c">#=&gt; a JSON object containing all low-level container info</span>
+myapp.exec(<span class="pl-s"><span class="pl-pds">"</span>bin/rake test<span class="pl-pds">"</span></span>) <span class="pl-c">#=&gt; run a command in the running container</span>
+</pre></div>
+
+<h2>
+<a id="development" class="anchor" href="#development" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development</h2>
+
+<p>After checking out the repo, run <code>bin/setup</code> to install dependencies. Then,
+run <code>rake test</code> to run the tests. You can also run <code>bin/console</code> for an
+interactive prompt that will allow you to experiment.</p>
+
+<p>To install this gem onto your local machine, run <code>bundle exec rake install</code>.
+To release a new version, update the version number in <code>version.rb</code>, and then
+run <code>bundle exec rake release</code>, which will create a git tag for the version,
+push git commits and tags, and push the <code>.gem</code> file to
+<a href="https://rubygems.org">rubygems.org</a>.</p>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Bug reports and pull requests are welcome on GitHub at
+<a href="https://github.com/bjjb/dugaire">https://github.com/bjjb/dugaire</a>. This project is intended to be a safe,
+welcoming space for collaboration, and contributors are expected to adhere to
+the <a href="http://contributor-covenant.org">Contributor Covenant</a> code of conduct.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>The gem is available as open source under the terms of the <a href="http://opensource.org/licenses/MIT">MIT
+License</a>.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/bjjb/dugaire/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/bjjb/dugaire/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/bjjb/dugaire"></a> is maintained by <a href="https://github.com/bjjb">bjjb</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
